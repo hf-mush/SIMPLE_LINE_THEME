@@ -1,0 +1,30 @@
+.title {
+  color: $color-black-1;
+  font-weight: normal;
+  position: relative;
+  text-align: center;
+}
+
+.link {
+  color: inherit;
+  font-size: inherit;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.text {
+  color: $color-black-1;
+  text-align: center;
+}
+
+.text__meta {
+  color: $color-gray-2;
+  font-size: $font-14;
+}
+
+.copyright {
+  font-size: $font-12;
+  text-align: center;
+}

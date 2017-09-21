@@ -1,0 +1,17 @@
+.g-container {
+  min-width: $width-sp;
+  position: relative;
+  z-index: $z-index-container;
+}
+
+.g-container__inner {
+  min-height: 412px;
+  padding: 16px 20px 32px;
+  z-index: $z-index-container;
+}
+
+@media screen and (max-width: $width-tab) {
+  .g-container__inner {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,157 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+p,
+blockquote,
+table,
+th,
+td,
+time,
+img,
+button,
+div,
+a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 16px/1 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+body {
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+
+* {
+  html {
+    input,
+    textarea,
+    select {
+      font-size: 100%;
+    }
+
+    body,
+    &:first-child + html {
+      body {
+        font: x-small;
+        font-size: small;
+      }
+    }
+  }
+
+  &:first-child {
+    + html + input,
+    html + textarea {
+      font-size: 100%;
+    }
+
+    + html {
+      select {
+        font-size: 100%;
+      }
+    }
+  }
+}
+
+a {
+  outline: none;
+  overflow: hidden;
+  text-decoration: none;
+
+  &:hover {
+    overflow: hidden;
+    text-decoration: none;
+  }
+}
+
+img {
+  border: 0;
+  border-style: none;
+  vertical-align: bottom;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  text-align: left;
+}
+
+ul,
+dl,
+ol {
+  text-indent: 0;
+}
+
+li {
+  list-style: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+  width: 100%;
+}
+
+th,
+td {
+  border: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+caption {
+  text-align: left;
+}
