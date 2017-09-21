@@ -1,0 +1,45 @@
+// width
+$width-pc: 1024px;
+$width-tab: 768px;
+$width-middle: 550px;
+$width-sp: 320px;
+
+$width-limit-tab: $width-pc - 1px;
+$width-limit-middle: $width-tab - 1px;
+$width-limit-sp: $width-middle - 1px;
+
+// color
+$color-blue-1: #cee3f6;
+$color-blue-2: #375eab;
+$color-blue-3: #3b5998;
+$color-blue-4: #1da1f2;
+
+$color-black-1: #222;
+$color-black-2: #24292e;
+
+$color-gray-1: #efefef;
+$color-gray-2: #666;
+$color-gray-3: #ccc;
+$color-gray-4: #4d4d4d;
+$color-gray-5: #f6f6f6;
+$color-gray-6: #ddd;
+
+$color-white-1: #fff;
+
+$color-green-1: #008b8b;
+
+// font sise
+$font-24: 24px;
+$font-22: 22px;
+$font-20: 20px;
+$font-18: 18px;
+$font-16: 16px;
+$font-14: 14px;
+$font-12: 12px;
+
+// z-index
+$z-index-container: 1;
+$z-index-header: 2;
+$z-index-footer: 2;
+$z-index-content: 3;
+$z-index-article: 3;

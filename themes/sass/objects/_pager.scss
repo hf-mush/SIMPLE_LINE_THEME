@@ -1,0 +1,39 @@
+.pager {
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  .pager__item {
+    font-size: $font-14;
+
+    & > a {
+      color: $color-blue-2;
+    }
+  }
+}
+
+.pager--archive {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  .pager__item {
+    flex: 0 0 auto;
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-blue-1;
+      margin-left: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-limit-sp) {
+  .pager--archive {
+    justify-content: center;
+  }
+}

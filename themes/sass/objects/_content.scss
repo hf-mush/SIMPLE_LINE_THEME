@@ -1,0 +1,159 @@
+.content {
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: $z-index-content;
+}
+
+.content__breadcrumbs {
+  color: $color-black-1;
+  font-size: $font-12;
+  line-height: 2;
+  margin-bottom: 8px;
+  text-align: left;
+
+  span {
+    color: $color-black-1;
+  }
+
+  a {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// Featured Articles section.
+.content--featured {
+  padding-bottom: 36px;
+
+  & > .title {
+    color: $color-blue-2;
+    font-size: $font-18;
+    text-align: left;
+  }
+
+  & > .content__title {
+    margin-bottom: 24px;
+  }
+}
+
+// Archives Articles section.
+.content--archives {
+  padding-bottom: 48px;
+  position: relative;
+
+  & > .title {
+    color: $color-blue-2;
+    font-size: $font-18;
+    text-align: left;
+  }
+
+  & > .content__title {
+    margin-bottom: 24px;
+  }
+}
+
+.content__item-title {
+  font-size: $font-16;
+  line-height: 1.25;
+  margin-bottom: 4px;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+.content__item-extract {
+  color: $color-gray-2;
+  font-size: $font-14;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  max-height: 42px;
+  min-height: 21px;
+  overflow: hidden;
+}
+
+.content__item-date {
+  color: $color-gray-2;
+  font-size: $font-14;
+  line-height: 1;
+}
+
+// backnumber section.
+.content__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: $width-limit-sp) {
+  .content__wrapper {
+    flex-direction: column;
+  }
+}
+
+.content--pasted {
+  background-color: $color-white-1;
+  flex: 1 1 auto;
+  padding-bottom: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  & > .title {
+    color: $color-blue-2;
+    font-size: $font-18;
+    text-align: left;
+  }
+
+  & > .content__title {
+    margin-bottom: 24px;
+  }
+}
+
+// Featured Category section.
+.content--category {
+  border-bottom: 1px dotted $color-gray-3;
+  padding-bottom: 24px;
+
+  & > .title {
+    color: $color-blue-2;
+    font-size: $font-18;
+    text-align: left;
+  }
+
+  & > .content__title {
+    margin-bottom: 24px;
+  }
+}
+
+// External Links section.
+.content--links-external {
+  padding-top: 24px;
+  position: relative;
+}
+
+// buttons section.
+.buttons--social {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 8px;
+  min-height: 20px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  & > * {
+    margin-bottom: 8px;
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-limit-middle) {
+  .buttons--social {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}

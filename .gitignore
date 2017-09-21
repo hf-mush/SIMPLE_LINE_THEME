@@ -5,5 +5,11 @@ docker-compose.yml
 # package files.
 node_modules
 
-# Shell Script 
+# shellscript files. 
 script
+
+# config files.
+themes/simple-line/config/defines.php
+
+# compiled files.
+style.css

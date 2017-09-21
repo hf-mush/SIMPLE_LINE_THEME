@@ -1,0 +1,11 @@
+.g-footer {
+  background-color: $color-white-1;
+  min-width: $width-sp;
+  z-index: $z-index-footer;
+}
+
+.g-footer__inner {
+  border-top: 1px solid $color-blue-2;
+  max-width: $width-pc - 40px;
+  padding: 24px 8px 48px;
+}

@@ -1,0 +1,158 @@
+.article {
+  position: relative;
+  z-index: $z-index-article;
+}
+
+.g-article {
+  padding-bottom: 32px;
+  position: relative;
+}
+
+.article__thumbnail {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid $color-gray-1;
+  height: 172px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+@media screen and (max-width: $width-middle) {
+  .article__thumbnail {
+    height: 72px;
+  }
+}
+
+.g-article__header {
+  padding-bottom: 24px;
+  position: relative;
+
+  .title {
+    color: $color-black-1;
+    font-size: $font-20;
+    text-align: left;
+  }
+
+  .text {
+    color: $color-gray-2;
+    font-size: $font-14;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: $width-middle) {
+  .g-article__header {
+    .buttons--social {
+      display: none;
+    }
+  }
+}
+
+.g-article__header__title {
+  border-bottom: 1px solid $color-gray-2;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+}
+
+.g-article__inner {
+  min-height: 240px;
+  padding-bottom: 56px;
+  position: relative;
+
+  h1 {
+    font-size: $font-20;
+    line-height: 1.5;
+    padding-bottom: 24px;
+  }
+
+  h2 {
+    font-size: $font-18;
+    line-height: 1.5;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  h3 {
+    font-size: $font-16;
+    line-height: 1.5;
+    padding-bottom: 8px;
+    padding-top: 16px;
+  }
+
+  h4 {
+    font-size: $font-14;
+    line-height: 1.5;
+    padding-bottom: 8px;
+    padding-top: 16px;
+  }
+
+  p {
+    font-size: $font-14;
+    line-height: 1.7;
+    padding-bottom: 8px;
+    text-align: left;
+  }
+
+  pre {
+    text-align: left;
+  }
+
+  code {
+    background-color: $color-gray-5;
+    border: 1px solid $color-gray-6;
+    display: inline-block;
+    font-size: $font-14;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    padding: 6px;
+    width: 50%;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  a {
+    color: $color-blue-2;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+@media screen and (max-width: $width-tab) {
+  .g-article__inner {
+    code {
+      width: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: $width-middle) {
+  .g-article__inner {
+    code {
+      width: 100%;
+    }
+  }
+}
+
+.g-article__footer {
+  border-top: 1px dotted $color-gray-3;
+  padding-bottom: 8px;
+  position: relative;
+
+  .text__meta {
+    font-size: $font-14;
+    line-height: 2.14;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: right;
+  }
+
+  .buttons--social {
+    justify-content: flex-end;
+  }
+}

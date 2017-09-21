@@ -1,0 +1,58 @@
+input {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+textarea {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  resize: none;
+}
+
+.form__title {
+  font-size: $font-14;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.form__content {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form__buttons {
+  text-align: left;
+}
+
+.input__text {
+  border: 1px solid $color-gray-3;
+  max-width: 370px;
+  padding: 4px 6px;
+  width: 90%;
+}
+
+.textarea__content {
+  border: 1px solid $color-gray-3;
+  max-width: 370px;
+  padding: 4px 6px;
+  width: 90%;
+}
+
+.input__submit {
+  border: 1px solid $color-gray-3;
+  border-radius: 8px;
+  color: $color-gray-4;
+  cursor: pointer;
+  font-size: $font-14;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+span.wpcf7-not-valid-tip {
+  font-size: $font-12;
+  margin-top: 8px;
+}
