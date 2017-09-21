@@ -13,3 +13,6 @@ themes/simple-line/config/defines.php
 
 # compiled files.
 style.css
+
+# env files.
+.env
