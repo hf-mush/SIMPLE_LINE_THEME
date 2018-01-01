@@ -121,6 +121,11 @@
       opacity: .8;
     }
   }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: $width-tab) {
