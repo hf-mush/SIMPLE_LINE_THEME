@@ -5,6 +5,6 @@
     <li class="list__item"><a class="link--button twitter" href="<?php echo TWITTER_URL; ?>" target="_blank">Twitter</a></li>
     <li class="list__item"><a class="link--button about" href="/about">About</a></li>
     <li class="list__item"><a class="link--button contact" href="/contact">Contact</a></li>
-    <li class="list__item"><a class="link--button external" href="/">External</a></li>
+    <li class="list__item"><a class="link--button external" href="/Record">Record</a></li>
   </ul>
 </div>
