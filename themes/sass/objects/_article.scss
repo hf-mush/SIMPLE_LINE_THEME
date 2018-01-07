@@ -126,6 +126,20 @@
     height: auto;
     max-width: 100%;
   }
+
+  ul {
+    padding: 8px 0;
+    position: relative;
+
+    li {
+      font-size: $font-14;
+      line-height: 1.5;
+      list-style-position: outside;
+      list-style-type: disc;
+      margin-left: 24px;
+      text-align: left;
+    }
+  }
 }
 
 @media screen and (max-width: $width-tab) {
