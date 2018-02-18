@@ -1,13 +1,13 @@
 <?php
-    get_header();
+get_header();
 ?>
 <div class="content content--featured">
     <h2 class="title content__title">Featured Articles</h2>
     <ul class="list list--articles">
         <?php
-            $count_posts = wp_count_posts();
-            $published_posts = $count_posts->publish;
-            if ($published_posts === 0) :
+        $count_posts = wp_count_posts();
+        $published_posts = $count_posts->publish;
+        if ($published_posts === 0) :
         ?>
         <li class="list__item">
             <div class="item__thumbnail"><a class="link">No Img.</a></div>
@@ -18,29 +18,29 @@
             </div>
         </li>
         <?php
-            else :
-                $args = array(
-                    'posts_per_page' => 5,
-                    'offset' => 0,
-                    'category' => '',
-                    'category_name' => '',
-                    'orderby' => 'date',
-                    'order' => 'DESC',
-                    'include' => '',
-                    'exclude' => '',
-                    'meta_key' => '',
-                    'meta_value' => '',
-                    'post_type' => 'post',
-                    'post_mime_type' => '',
-                    'post_parent' => '',
-                    'author' => '',
-                    'post_status' => 'publish',
-                    'suppress_filters' => true 
-                );
-                $data = get_posts($args);
-                foreach ($data as $post) :
-                    setup_postdata($post);
-                    $image_url = get_the_post_thumbnail_url($post->ID, 'full');
+        else :
+            $args = array(
+                'posts_per_page' => 5,
+                'offset' => 0,
+                'category' => '',
+                'category_name' => '',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'include' => '',
+                'exclude' => '',
+                'meta_key' => '',
+                'meta_value' => '',
+                'post_type' => 'post',
+                'post_mime_type' => '',
+                'post_parent' => '',
+                'author' => '',
+                'post_status' => 'publish',
+                'suppress_filters' => true 
+            );
+            $data = get_posts($args);
+            foreach ($data as $post) :
+                setup_postdata($post);
+                $image_url = get_the_post_thumbnail_url($post->ID, 'full');
         ?>
         <li class="list__item">
             <div class="item__thumbnail" style="background-image:url('<?php echo $image_url; ?>');"><a class="thumbnail-link" href="<?php echo get_the_permalink($post->ID); ?>"></a></div>
@@ -51,15 +51,15 @@
             </div>
         </li>
         <?php
-                endforeach;
-            endif;
+            endforeach;
+        endif;
         ?>
     </ul>
 </div>
 <?php
-    echo get_template_part('parts/content/categories', 'list');
-    echo get_template_part('parts/content/links', 'external');
+echo get_template_part('parts/content/categories', 'list');
+echo get_template_part('parts/content/links', 'external');
 ?>
 <?php
-    get_footer();
+get_footer();
 ?>

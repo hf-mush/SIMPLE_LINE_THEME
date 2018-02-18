@@ -3,4 +3,5 @@ define('FB_APP_ID', '');
 define('GITHUB_URL', '');
 define('FACEBOOK_URL', '');
 define('TWITTER_URL', '');
+define('GOOGLE_SITE_IDENTITY', '');
 ?>
