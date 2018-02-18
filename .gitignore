@@ -11,6 +11,12 @@ script
 # config files.
 themes/simple-line/config/defines.php
 
+# binary files.
+themes/simple-line/img/*
+!themes/simple-line/img/arrow.svg
+themes/simple-line/favicon
+themes/simple-line/screenshot.png
+
 # compiled files.
 style.css
 
