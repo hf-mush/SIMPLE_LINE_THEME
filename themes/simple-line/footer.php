@@ -2,7 +2,7 @@
     </div>
     <footer class="outer g-footer">
       <div class="inner g-footer__inner">
-        <div class="text copyright">&copy; 2017 - <? echo date('Y') . " " . bloginfo('name'); ?>.</div>
+        <div class="text copyright">&copy; 2017 - <?php echo date('Y'); ?> <? echo bloginfo('name'); ?>.</div>
       </div>
     </footer>
     <?php
