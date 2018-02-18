@@ -22,7 +22,7 @@
 			    elseif (preg_match($searchPattern, $post->post_content, $imgurl) && !is_archive()) :
 					$ogp_image = $imgurl[2];
 				else :
-					$ogp_image = get_template_directory_uri().'/img/hiroshifujita.png';
+					$ogp_image = get_template_directory_uri().'/img/hiroshifujita.jpg';
 				endif;
 			endwhile;
 		endif;
@@ -35,14 +35,14 @@
 		$ogp_title = get_bloginfo('name');
 		$ogp_url = esc_url(home_url());
 		$ogp_description = get_bloginfo('description').' | '.get_bloginfo('name');
-		$ogp_image = get_template_directory_uri().'/img/hiroshifujita.png';
+		$ogp_image = get_template_directory_uri().'/img/hiroshifujita.jpg';
 	else :
 		$description = 'Archive | '.get_bloginfo('description').' | '.get_bloginfo('name');
 		$ogp_type = 'website';
 		$ogp_title = get_bloginfo('name');
 		$ogp_url = esc_url(home_url());
 		$ogp_description = 'Archive | '.get_bloginfo('description').' | '.get_bloginfo('name');
-		$ogp_image = get_template_directory_uri().'/img/hiroshifujita.png';
+		$ogp_image = get_template_directory_uri().'/img/hiroshifujita.jpg';
 	endif;
 	if (is_home()) :
 		$canonical_url = esc_url(home_url());
