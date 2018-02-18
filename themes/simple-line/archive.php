@@ -1,14 +1,14 @@
 <?php
-    get_header();
+get_header();
 ?>
 <div class="content--archives">
     <h1 class="title content__title">Archives : <?php single_cat_title(); ?></h1>
     <div class="list list--archives">
         <?php
-            if (have_posts()) :
-                while (have_posts()) :
-                    the_post();
-                    $image_url = get_the_post_thumbnail_url($post->ID, 'full');
+        if (have_posts()) :
+            while (have_posts()) :
+                the_post();
+                $image_url = get_the_post_thumbnail_url($post->ID, 'full');
         ?>
         <section class="list__item">
             <div class="item__thumbnail" style="background-image:url('<?php echo $image_url; ?>');"><a class="thumbnail-link" href="<?php echo get_the_permalink(); ?>"></a></div>
@@ -19,35 +19,35 @@
             </div>
         </section>
         <?php
-                endwhile;
-            endif;
+            endwhile;
+        endif;
         ?>
     </div>
     <?php
-        $prev_link = get_previous_posts_link('< 前のページへ');
-        $next_link = get_next_posts_link('次のページへ >');
-        if (isset($prev_link) or isset($next_link)) :
+    $prev_link = get_previous_posts_link('< 前のページへ');
+    $next_link = get_next_posts_link('次のページへ >');
+    if (isset($prev_link) or isset($next_link)) :
     ?>
     <ul class="pager pager--archive">
         <?php
-            if (isset($prev_link)) :
+        if (isset($prev_link)) :
         ?>
         <li class="pager__item pager__item--prev" id="prev"><?php echo $prev_link; ?></li>
         <?php
-            endif;
-            if (isset($next_link)) :
+        endif;
+        if (isset($next_link)) :
         ?>
         <li class="pager__item pager__item--next" id="next"><?php echo $next_link; ?></li>
         <?php
-            endif;
+        endif;
         ?>
     </ul>
     <?php
-        endif;
+    endif;
     ?>
 </div>
 <?php
-    echo get_template_part('parts/content/categories', 'list');
-    echo get_template_part('parts/content/links', 'external');
-    get_footer();
+echo get_template_part('parts/content/categories', 'list');
+echo get_template_part('parts/content/links', 'external');
+get_footer();
 ?>

@@ -1,4 +1,4 @@
 <?php
-    $hatena_link = 'http://b.hatena.ne.jp/entry/' . str_replace('http://', '', get_the_permalink());
+$hatena_link = 'http://b.hatena.ne.jp/entry/' . str_replace('http://', '', get_the_permalink());
 ?>
 <div class="buttons--social"><div class="fb-like" data-href="<?php echo get_the_permalink(); ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div><a href="<?php echo get_the_permalink(); ?>" class="twitter-share-button">Tweet</a><a href="<?php echo $hatena_link; ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><div class="line-it-button" data-lang="ja" data-type="share-a" data-url="<?php echo get_the_permalink(); ?>" style="display: none;"></div><div><div class="g-plusone" data-size="medium" data-annotation="none" data-href="<?php echo get_the_permalink(); ?>"></div></div></div>

@@ -1,8 +1,8 @@
 <?php
-    get_header();
-    if (have_posts()) :
-        while (have_posts()) :
-            the_post();
+get_header();
+if (have_posts()) :
+    while (have_posts()) :
+        the_post();
 ?>
 <article class="article g-article">
     <header class="header g-article__header">
@@ -11,13 +11,13 @@
     </header>
     <div class="inner g-article__inner">
         <?php
-            the_content();
+        the_content();
         ?>
     </div>
     <footer class="footer g-article__footer"></footer>
 </article>
 <?php
-        endwhile;
-    endif;
-    get_footer();
+    endwhile;
+endif;
+get_footer();
 ?>

@@ -1,8 +1,7 @@
-<script type="text/javascript">
-  window.___gcfg = {lang: 'ja'};
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92967977-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-92967977-1');
 </script>
