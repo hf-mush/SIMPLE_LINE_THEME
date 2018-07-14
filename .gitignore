@@ -1,6 +1,5 @@
 # database files.
 docker
-docker-compose.yml
 
 # package files.
 node_modules
