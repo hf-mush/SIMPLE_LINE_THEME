@@ -1,6 +1,6 @@
 {
-  "name": "hiroshifujita.com_project",
-  "version": "0.9.0",
+  "name": "hiroshifujita.com",
+  "version": "1.0.0",
   "description": "hiroshifujita.com themes project.",
   "main": "index.js",
   "private": true,
@@ -10,9 +10,10 @@
   "author": "HiroshiFujita",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "autoprefixer": "^6.7.2",
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
     "gulp": "^4.0.0",
     "gulp-babel": "^6.1.3",
     "gulp-load-plugins": "^1.5.0",
