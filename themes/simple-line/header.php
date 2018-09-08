@@ -57,8 +57,10 @@
 	else : 
 		$canonical_url = esc_url(home_url());
 	endif;
+	$theme_info = wp_get_theme();
 ?>
   <head>
+		<!-- version <?php echo $theme_info->get('Version'); ?> -->
 		<meta charset="<?php echo get_bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="keywords" content="hiroshi blog,hiroshifujita,hiroshifujita.com,hiroshi,blog,fujita">
