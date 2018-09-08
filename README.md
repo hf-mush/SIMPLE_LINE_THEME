@@ -1,5 +1,5 @@
 # SIMPLE_LINE_THEME
 
-Wordpressブログのテーマ  
+Wordpressテーマのリポジトリ  
   
 [HIROSHI BLOG](https://hiroshifujita.com)  

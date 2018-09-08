@@ -1,0 +1,27 @@
+version: '2'
+services:
+  wordpress:
+    build: ./cms
+    ports:
+      - '8080:80'
+    volumes:
+      - ../themes/simple-line:/var/www/html/cms/wp-content/themes/simple-line
+    links:
+      - database:database
+    container_name: wp-srv
+    hostname: wp-srv
+
+  database:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db/data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secrets
+      MYSQL_DATABASE: wp_db
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: secrets
+    container_name: db-srv
+    hostname: db-srv

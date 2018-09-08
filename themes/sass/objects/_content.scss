@@ -113,6 +113,8 @@
 .content--category {
   border-bottom: 1px dotted $color-gray-3;
   padding-bottom: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
 
   & > .title {
     color: $color-blue-2;

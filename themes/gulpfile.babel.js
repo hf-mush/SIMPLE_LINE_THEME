@@ -1,6 +1,7 @@
 import autoprefixer from 'autoprefixer';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import '@babel/register';
 
 const $ = gulpLoadPlugins();
 
@@ -38,10 +39,10 @@ gulp.task('sass:watch', () => {
     const target = [
         sassPath + '**/*.scss'
     ];
-    gulp.watch(target, ['sass']);
+    gulp.watch(target, gulp.task('sass'));
 });
 
 // Task of running.
-gulp.task('watch', ['sass:watch']);
-gulp.task('build', ['sass']);
-gulp.task('default', ['watch']);
+gulp.task('watch', gulp.series(gulp.parallel('sass:watch')));
+gulp.task('build', gulp.series(gulp.parallel('sass')));
+gulp.task('default', gulp.series(gulp.parallel('watch')));
