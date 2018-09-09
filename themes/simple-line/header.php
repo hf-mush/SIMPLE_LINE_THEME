@@ -74,7 +74,7 @@
 		<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>">
 		<meta property="fb:app_id" content="<?php echo FB_APP_ID ?>">
 		<meta name="google-site-verification" content="<?php echo GOOGLE_SITE_IDENTITY ?>">
-		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileColor" content="#437cb5">
 		<meta name="msapplication-TileImage" content="<?php echo $favicon_path; ?>/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 <?php
@@ -103,7 +103,9 @@
 <?php
 	}
 ?>
-		<link rel="manifest" href="<?php echo $favicon_path; ?>/manifest.json">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $favicon_path; ?>/apple-touch-icon.png">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#437cb5">
+		<link rel="manifest" href="<?php echo $favicon_path; ?>/site.webmanifest">
 		<link rel="alternate" type="application/rss+xml" title="RSSフィード" href="<?php echo get_bloginfo('rss2_url'); ?>">
 		<link rel="alternate" type="application/rss+xml" title="RSSフィード" href="<?php echo get_bloginfo('atom_url'); ?>">
 		<link rel="alternate" media="handheld" href="<?php echo esc_url(home_url()); ?>">

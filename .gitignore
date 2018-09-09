@@ -11,7 +11,7 @@ themes/simple-line/config/defines.php
 themes/simple-line/img/*
 !themes/simple-line/img/arrow.svg
 themes/simple-line/favicon
-themes/simple-line/screenshot.png
+!themes/simple-line/screenshot.png
 docker/db/data
 !docker/db/data/.gitkeep
 
