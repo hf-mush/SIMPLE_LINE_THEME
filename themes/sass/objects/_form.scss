@@ -13,9 +13,11 @@ textarea {
 }
 
 .form__title {
+  border-left: 1px solid $color-black-1;
   font-size: $font-14;
   line-height: 1.5;
   margin-bottom: 8px;
+  padding-left: 8px;
   text-align: left;
 }
 
@@ -29,23 +31,24 @@ textarea {
 }
 
 .input__text {
-  border: 1px solid $color-gray-3;
+  border: 1px solid $color-black-1;
+  border-radius: 8px;
   max-width: 370px;
   padding: 4px 6px;
   width: 90%;
 }
 
 .textarea__content {
-  border: 1px solid $color-gray-3;
+  border: 1px solid $color-black-1;
+  border-radius: 8px;
   max-width: 370px;
   padding: 4px 6px;
   width: 90%;
 }
 
 .input__submit {
-  border: 1px solid $color-gray-3;
-  border-radius: 8px;
-  color: $color-gray-4;
+  background-color: $color-blue-2;
+  color: $color-white-1;
   cursor: pointer;
   font-size: $font-14;
   padding: 4px 8px;
