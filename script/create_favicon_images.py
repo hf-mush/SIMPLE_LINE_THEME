@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw
 import os
+import sys
 
 
 def add_margin(pil_img, top, right, bottom, left, color):
@@ -43,10 +44,11 @@ sizes_icon = [16, 24, 32, 36, 48, 72, 96, 128,
 sizes_mstile = [70, 144, 150, 310]
 
 # define path str
-source_dir = 'resources/'
+root_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
+source_dir = root_dir + '/resources/'
 source_name = 'favicon'
 source_ext = '.png'
-favicon_dir = 'favicons/'
+favicon_dir = root_dir + '/favicons/'
 favicon_ext = '.png'
 
 if not os.path.exists(favicon_dir):
