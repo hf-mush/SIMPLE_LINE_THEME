@@ -14,6 +14,10 @@ themes/simple-line/favicons
 docker/db/data
 !docker/db/data/.gitkeep
 
+# script files
+script/favicons/*
+# script/resources/*
+
 # compiled files.
 style.css
 
