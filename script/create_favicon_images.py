@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw
+import os
 
 
 def add_margin(pil_img, top, right, bottom, left, color):
@@ -47,6 +48,9 @@ source_name = 'favicon'
 source_ext = '.png'
 favicon_dir = 'favicons/'
 favicon_ext = '.png'
+
+if not os.path.exists(favicon_dir):
+    os.makedirs(favicon_dir)
 
 # set source image
 source = Image.open(source_dir + source_name + source_ext)
