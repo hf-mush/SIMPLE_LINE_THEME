@@ -2,10 +2,12 @@ FROM php:7-apache
 
 # Init server environments
 RUN apt-get update
-RUN apt-get install -y curl unzip libpng12-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev
+RUN apt-get install -y curl unzip libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev
 RUN rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
-RUN docker-php-ext-install gd mysqli opcache pdo_mysql mbstring iconv mcrypt
+RUN docker-php-ext-install gd mysqli opcache pdo_mysql mbstring iconv
+# mcrypt install with pecl. 7.2 =< php version
+RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
@@ -62,11 +64,11 @@ COPY index.php /var/www/html/index.php
 COPY .htaccess /var/www/html/.htaccess
 
 # Add directory for media files
-ADD ./uploads /var/www/html/cms/wp-content/uploads
+# ADD ./uploads /var/www/html/cms/wp-content/uploads
 
 # Change owner
 RUN chown www-data. /var/www/html/index.php
 RUN chown www-data. /var/www/html/.htaccess
-RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
+# RUN chown www-data. -R /var/www/html/cms/wp-content/uploads
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
