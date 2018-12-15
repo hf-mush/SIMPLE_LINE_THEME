@@ -3,9 +3,6 @@
 # package files.
 node_modules
 
-# shellscript files. 
-script
-
 # config files.
 themes/simple-line/config/defines.php
 
