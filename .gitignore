@@ -1,17 +1,16 @@
+.DS_Store
+
 # package files.
 node_modules
-
-# shellscript files. 
-script
 
 # config files.
 themes/simple-line/config/defines.php
 
 # binary files.
 themes/simple-line/img/*
+themes/simple-line/favicons
 !themes/simple-line/img/arrow.svg
-themes/simple-line/favicon
-themes/simple-line/screenshot.png
+!themes/simple-line/screenshot.png
 docker/db/data
 !docker/db/data/.gitkeep
 
