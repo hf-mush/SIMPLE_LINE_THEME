@@ -106,6 +106,8 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $favicon_path; ?>/apple-touch-icon.png">
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#437cb5">
 		<link rel="manifest" href="<?php echo $favicon_path; ?>/manifest.json">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo $favicon_path; ?>/favicon.ico">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo $favicon_path; ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSSフィード" href="<?php echo get_bloginfo('rss2_url'); ?>">
 		<link rel="alternate" type="application/rss+xml" title="RSSフィード" href="<?php echo get_bloginfo('atom_url'); ?>">
 		<link rel="alternate" media="handheld" href="<?php echo esc_url(home_url()); ?>">
