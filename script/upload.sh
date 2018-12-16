@@ -5,7 +5,7 @@ cd `dirname $0`
 # move repository root
 cd ..
 ## remove current themes files on remote server.
-echo ">>> remove files on server." >&1
+echo ">>> remove files on server."
 ssh -i $SSH_KEY -p $SSH_PORT $SSH_USER@$SSH_HOST "cd $REMOTE_PATH && rm -rf $THEME/*"
 echo ">>> remove file on server, success. "
 # upload themes files by scp to remote server.
