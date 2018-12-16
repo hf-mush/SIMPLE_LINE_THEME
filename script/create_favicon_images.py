@@ -120,8 +120,8 @@ manifest['description'] = os.environ.get('BLOG_DESCRIPTION')
 manifest['start_url'] = os.environ.get('BLOG_URL')
 manifest['display'] = 'standalone'
 manifest['orientation'] = 'any'
-manifest['background_color'] = '#fff'
-manifest['theme_color'] = '#fff'
+manifest['background_color'] = os.environ.get("THEME_COLOR")
+manifest['theme_color'] = os.environ.get("THEME_COLOR")
 manifest['icons'] = []
 
 for size in sizes_android:
@@ -141,13 +141,14 @@ with open(manifest_path, 'w') as f:
 
 # move sources to favicons
 browserconfig_path = favicon_dir + '/browserconfig.xml'
-browserconfig_source_path = source_dir+'/browserconfig.xml'
+browserconfig_source_path = source_dir + '/browserconfig.xml'
 
 if os.path.exists(browserconfig_source_path):
     shutil.copyfile(browserconfig_source_path, browserconfig_path)
 
 # move favicons to themes
-themes_favicons_path = '%s/../themes/%s/favicons' % (root_dir, os.environ.get('THEME'))
+themes_favicons_path = '%s/../themes/%s/favicons' % (
+    root_dir, os.environ.get('THEME'))
 
 if os.path.exists(favicon_dir):
     copy_tree(favicon_dir, themes_favicons_path)
