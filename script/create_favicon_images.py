@@ -1,6 +1,11 @@
 from PIL import Image, ImageDraw
 import os
+from os.path import join, dirname
 import sys
+import json
+import shutil
+from distutils.dir_util import copy_tree
+from dotenv import load_dotenv
 
 
 def add_margin(pil_img, top, right, bottom, left, color):
@@ -45,61 +50,104 @@ sizes_mstile = [70, 144, 150, 310]
 
 # define path str
 root_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
-source_dir = root_dir + '/resources/'
-source_name = 'favicon'
-source_ext = '.png'
-favicon_dir = root_dir + '/favicons/'
-favicon_ext = '.png'
+source_dir = root_dir + '/resources'
+favicon_dir = root_dir + '/favicons'
+source_file = '/favicon.png'
 
+# make directory if not exist favicons/
 if not os.path.exists(favicon_dir):
     os.makedirs(favicon_dir)
 
-# set source image
-source = Image.open(source_dir + source_name + source_ext)
+# set source image for favicon
+source = Image.open(source_dir + source_file)
 
 # create favicon.ico
-img_converted = favicon_dir + 'favicon.ico'
+img_converted = '%s/favicon.ico' % favicon_dir
 img_resize = source.resize((48, 48))
 img_resize.save(img_converted)
 
 # create favicon for default
 for size in sizes_icon:
-    img_converted = favicon_dir + 'icon-' + \
-        str(size) + 'x' + str(size) + favicon_ext
+    img_converted = '%s/icon-%dx%d.png' % (favicon_dir, size, size)
     img_resize = source.resize((int(size), int(size)))
     img_resize.save(img_converted)
 
-# create default size apple-icon
-img_converted = favicon_dir + 'apple-touch-icon' + favicon_ext
+# create favicon for apple with default size
+img_converted = '%s/apple-touch-icon.png' % favicon_dir
 source.save(img_converted, sizes=[(96, 96)])
-img_converted = favicon_dir + 'apple-touch-icon-precomposed' + favicon_ext
+img_converted = '%s/apple-touch-icon-precomposed.png' % favicon_dir
 source.save(img_converted, sizes=[(96, 96)])
 
 # create favicon for apple
 for size in sizes_apple:
     img_resize = source.resize((int(size), int(size)))
-    img_converted = favicon_dir + 'apple-touch-icon-' + \
-        str(size) + 'x' + str(size) + favicon_ext
+    img_converted = '%s/apple-touch-icon-%dx%d.png' % (favicon_dir, size, size)
     img_resize.save(img_converted)
-    img_converted = favicon_dir + 'apple-touch-icon-' + \
-        str(size) + 'x' + str(size) + '-precomposed' + favicon_ext
+    img_converted = '%s/apple-touch-icon-%dx%d-precomposed.png' % (
+        favicon_dir, size, size)
     img_resize.save(img_converted)
 
 # create favicon for android
 for size in sizes_android:
-    img_converted = favicon_dir + 'android-chrome-' + \
-        str(size) + 'x' + str(size) + favicon_ext
+    img_converted = '%s/android-chrome-%dx%d.png' % (favicon_dir, size, size)
     img_resize = source.resize((int(size), int(size)))
     img_resize.save(img_converted)
 
 # create favicon for microsoft
 croped = pasted_image(source, 128, 128, 70, 70)
-croped.save(favicon_dir+'mstile-70x70.png')
+croped.save(favicon_dir+'/mstile-70x70.png')
 croped = pasted_image(source, 144, 144, 144, 144)
-croped.save(favicon_dir+'mstile-144x144.png')
+croped.save(favicon_dir+'/mstile-144x144.png')
 croped = pasted_image(source, 270, 270, 150, 150)
-croped.save(favicon_dir+'mstile-150x150.png')
+croped.save(favicon_dir+'/mstile-150x150.png')
 croped = pasted_image(source, 558, 270, 150, 150)
-croped.save(favicon_dir+'mstile-310x150.png')
+croped.save(favicon_dir+'/mstile-310x150.png')
 croped = pasted_image(source, 558, 558, 310, 310)
-croped.save(favicon_dir+'mstile-310x310.png')
+croped.save(favicon_dir+'/mstile-310x310.png')
+
+# load .env
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+# create manifest.json
+manifest = {}
+manifest['manifest_version'] = 2
+manifest['version'] = os.environ.get('THEME_VERSION')
+manifest['default_locale'] = 'ja'
+manifest['name'] = os.environ.get('BLOG_NAME')
+manifest['short_name'] = os.environ.get('BLOG_SHORT_NAME')
+manifest['description'] = os.environ.get('BLOG_DESCRIPTION')
+manifest['start_url'] = os.environ.get('BLOG_URL')
+manifest['display'] = 'standalone'
+manifest['orientation'] = 'any'
+manifest['background_color'] = '#fff'
+manifest['theme_color'] = '#fff'
+manifest['icons'] = []
+
+for size in sizes_android:
+    sizes = str(size) + 'x' + str(size)
+    icon = {
+        'src': '/favicons/android-chrome-' + sizes + '.png',
+        'sizes': sizes,
+        'type': 'image/png'
+    }
+    manifest['icons'].append(icon)
+
+# dump json for manifest
+manifest_path = favicon_dir + '/manifest.json'
+
+with open(manifest_path, 'w') as f:
+    json.dump(manifest, f, indent=4, ensure_ascii=False)
+
+# move sources to favicons
+browserconfig_path = favicon_dir + '/browserconfig.xml'
+browserconfig_source_path = source_dir+'/browserconfig.xml'
+
+if os.path.exists(browserconfig_source_path):
+    shutil.copyfile(browserconfig_source_path, browserconfig_path)
+
+# move favicons to themes
+themes_favicons_path = '%s/../themes/%s/favicons' % (root_dir, os.environ.get('THEME'))
+
+if os.path.exists(favicon_dir):
+    copy_tree(favicon_dir, themes_favicons_path)
