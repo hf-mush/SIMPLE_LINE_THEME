@@ -11,7 +11,7 @@ RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
-ENV WORDPRESS_VERSION 5.0 
+ENV WORDPRESS_VERSION 5.0.2
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
 RUN rm wordpress.tar.gz
@@ -39,7 +39,7 @@ RUN cp -r backwpup /var/www/html/cms/wp-content/plugins/
 RUN rm -rf backwpup/
 RUN rm backwpup.zip
 
-ENV GOOGLE_XML_SITEMAPS_VERSION 4.0.9
+ENV GOOGLE_XML_SITEMAPS_VERSION 4.1.0
 RUN curl -o google-sitemap-generator.zip -fSL "https://downloads.wordpress.org/plugin/google-sitemap-generator.${GOOGLE_XML_SITEMAPS_VERSION}.zip"
 RUN unzip google-sitemap-generator.zip
 RUN cp -r google-sitemap-generator /var/www/html/cms/wp-content/plugins/
@@ -52,7 +52,7 @@ RUN cp -r wp-multibyte-patch /var/www/html/cms/wp-content/plugins/
 RUN rm -rf wp-multibyte-patch/
 RUN rm wp-multibyte-patch.zip
 
-ENV CONTACT_FORM_VERSION 5.1
+ENV CONTACT_FORM_VERSION 5.1.1
 RUN curl -o contact-form-7.zip -fSL "https://downloads.wordpress.org/plugin/contact-form-7.${CONTACT_FORM_VERSION}.zip"
 RUN unzip contact-form-7.zip
 RUN cp -r contact-form-7 /var/www/html/cms/wp-content/plugins/
