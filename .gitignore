@@ -11,8 +11,8 @@ themes/simple-line/img/*
 themes/simple-line/favicons
 !themes/simple-line/img/arrow.svg
 !themes/simple-line/screenshot.png
-docker/db/data
-!docker/db/data/.gitkeep
+server/mysql
+!server/mysql/.gitkeep
 
 # script files
 script/favicons/*

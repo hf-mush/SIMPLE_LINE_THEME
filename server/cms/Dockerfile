@@ -11,14 +11,14 @@ RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
-ENV WORDPRESS_VERSION 5.0.2
+ENV WORDPRESS_VERSION 5.2
 RUN curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}-ja.tar.gz"
 RUN tar -xzf wordpress.tar.gz
 RUN rm wordpress.tar.gz
 RUN mv /var/www/html/wordpress /var/www/html/cms
 RUN chown -R www-data:www-data /var/www/html/cms
 
-ENV BREADCRUMB_NAVXT_VERSION 6.2.1
+ENV BREADCRUMB_NAVXT_VERSION 6.3.0
 RUN curl -o breadcrumb-navxt.zip -fSL "https://downloads.wordpress.org/plugin/breadcrumb-navxt.${BREADCRUMB_NAVXT_VERSION}.zip"
 RUN unzip breadcrumb-navxt.zip
 RUN cp -r breadcrumb-navxt /var/www/html/cms/wp-content/plugins/
@@ -32,7 +32,7 @@ RUN cp -r akismet /var/www/html/cms/wp-content/plugins/
 RUN rm -rf akismet/
 RUN rm akismet.zip
 
-ENV BACK_WP_UP_VERSION 3.6.6
+ENV BACK_WP_UP_VERSION 3.6.9
 RUN curl -o backwpup.zip -fSL "https://downloads.wordpress.org/plugin/backwpup.${BACK_WP_UP_VERSION}.zip"
 RUN unzip backwpup.zip
 RUN cp -r backwpup /var/www/html/cms/wp-content/plugins/
