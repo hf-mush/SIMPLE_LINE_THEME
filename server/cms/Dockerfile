@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.3.0-apache
 
 # Init server environments
 RUN apt-get update
@@ -7,7 +7,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
 RUN docker-php-ext-install gd mysqli opcache pdo_mysql mbstring iconv
 # mcrypt install with pecl. 7.2 =< php version
-RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
+RUN pecl install mcrypt-1.0.2 && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite expires
 
 # Wordpress Core Files
