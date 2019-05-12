@@ -10,13 +10,12 @@ services:
       - database:database
     container_name: wp-srv
     hostname: wp-srv
-
   database:
     image: mysql:latest
     ports:
       - '3306:3306'
     volumes:
-      - ./db/data:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secrets
